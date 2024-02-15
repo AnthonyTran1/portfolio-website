@@ -1,0 +1,299 @@
+/*
+Colors used
+
+Text Color (Dark Gray): #2b2b2b;
+Primary Color (Purple): #357b70;
+Secondary Color (Orange): #e0b354;
+ */
+
+:root {
+  --primary-color: #357b70;
+  --secondary-color: #e0b354;
+  --dark-grey: #2b2b2b;
+  --visted-color: #05676e;
+  --active-color: #9c4848;
+  --seattle-color_1: #000000;
+  --seattle-color_2: #1b46d4;
+  --seattle-color_3: #5cf136;
+  --grid-color: lightgray;
+  --body-font-weight: 500;
+  --body-font-size: 20px;
+  --body-font-family: "lato", sans-serif;
+  --h1-font-size: 30px;
+  --h1-font-weight: 700;
+  --h2-font-size: 24px;
+  --h3-font-weight: 18px;
+  --button-secondary-color: #2b2b2b;
+  --p-font-size: 24px;
+  --grid-item-p-weight: 300;
+  --h1-max-700-font-size: 20px;
+}
+
+body {
+  font-family: var(--body-font-family);
+  font-weight: var(--body-font-weight);
+  font-size: var(--body-font-size);
+  /*Sets the font size to 16px*/
+  line-height: 1.6;
+  /*Sets the line-height to 1.6px*/
+}
+
+h1 {
+  font-size: var(--h1-font-size);
+  font-weight: var(--h1-font-weight);
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+  font-weight: var(--h1-font-weight);
+}
+
+h3 {
+  font-size: var(--h3-font-weight);
+  font-weight: var(--h1-font-weight);
+}
+
+a {
+  color: var(--primary-color);
+}
+
+a:visited {
+  /* visited link */
+  color: var(--visted-color);
+}
+
+a:hover,
+a:focus {
+  /* No underlining when hovering over a link */
+  text-decoration: none;
+}
+
+a:active {
+  /* selected link */
+  color: var(--active-color);
+}
+
+input,
+texture,
+select,
+button {
+  font-family: system-ui;
+}
+
+button,
+.button {
+  /* overwrites browser defaults and resets the border */
+  border: none;
+  /* takes the font from the outer container */
+  display: inline-block;
+  font-family: inherit;
+  /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  /*adds spacing to the button (this will be discussed more in-depth later) */
+  padding: 10px;
+  border-radius: 3px;
+  /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  transition: opacity 0.2s;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+  /* lets the mouse appear as a hand when hovering over the button*/
+  cursor: pointer;
+  /* reduces the opacity of the button to 80% */
+  opacity: 0.8;
+}
+
+button:hover,
+button:focus {
+  /* lets the mouse appear as a hand when hovering over the button */
+  cursor: pointer;
+  /* reduces the opacity of the button to 80% */
+  opacity: 0.8;
+}
+
+.button__secondary {
+  background-color: var(--secondary-color);
+  color: var(--button-secondary-color);
+}
+
+.navigation-list__item--active {
+  text-decoration: none;
+}
+
+.navigation-list {
+  list-style-type: none;
+}
+
+.navigation-list li {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+p {
+  font-size: var(--p-font-size);
+  font-weight: var(--h1-font-weight);
+}
+
+.profile__portrait {
+  float: left;
+  width: 250px;
+  margin-right: 40px;
+  border-radius: 50%;
+}
+
+.page-footer {
+  clear: both;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+.profile {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page-header {
+  display: flex;
+  width: 100%;
+  padding: 20px 20px 50px 20px;
+}
+
+.page-header__item {
+  flex: 0 1 200px;
+  width: 100px;
+}
+
+.page-header__item:last-child {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.about-page {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.grid__item {
+  background-color: var(--grid-color);
+  padding: 10px;
+}
+
+.grid__item p {
+  font-weight: var(--grid-item-p-weight);
+}
+/*
+.grid__item:last-child {
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+*/
+
+.space-needle {
+  animation: 4s color-change infinite alternate linear;
+}
+
+@keyframes color-change {
+  0% {
+    fill: var(--seattle-color_1);
+  }
+  50% {
+    fill: var(--seattle-color_2);
+  }
+  100% {
+    fill: var(--seattle-color_3);
+  }
+}
+
+@keyframes cloud-move {
+  from {
+    transform: translate(0, 0px);
+  }
+  to {
+    transform: translate(200px, 0px);
+  }
+}
+
+.cloud-front {
+  animation: 30s cloud-move infinite alternate linear;
+}
+
+@keyframes rotate-360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-15deg);
+  }
+}
+
+.rotate {
+  animation: 5s rotate-360 infinite alternate linear;
+}
+@keyframes cloud-move-reverse {
+  from {
+    transform: translate(200px, 0%);
+  }
+  to {
+    transform: translate(0px, 0px);
+  }
+}
+
+.cloud-back {
+  animation: 34s cloud-move-reverse infinite alternate linear;
+}
+
+@keyframes expand-big {
+  from {
+    transform: scale(0, 1);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+
+.expand {
+  animation: 20s expand-big infinite alternate linear;
+}
+
+@media all and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media all and (min-width: 500px) and (max-width: 750px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media all and (max-width: 750px) {
+  .grid {
+    grid-gap: 10px;
+  }
+  .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: var(--h1-max-700-font-size);
+  }
+}
