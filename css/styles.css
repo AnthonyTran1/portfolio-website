@@ -29,6 +29,11 @@ Secondary Color (Orange): #e0b354;
   --h1-max-700-font-size: 20px;
 }
 
+main {
+  padding: 20px;
+  margin: 20px;
+}
+
 body {
   font-family: var(--body-font-family);
   font-weight: var(--body-font-weight);
@@ -115,11 +120,6 @@ button:focus {
   cursor: pointer;
   /* reduces the opacity of the button to 80% */
   opacity: 0.8;
-}
-
-.button__secondary {
-  background-color: var(--secondary-color);
-  color: var(--button-secondary-color);
 }
 
 .navigation-list__item--active {
